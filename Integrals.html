@@ -2,11 +2,14 @@
 		<h3>Line integrals</h3>
 		<p>
 		Line integrals are useful for finding the effect of a function along a certain path.<br>
-		<b>&int;<sub>C</sub> f(s) ds</b> will give the length of the path C.<br>
-		For a line integral, you will need:<br>
-		<b>x = f(t), y = g(t), dx/dt = f'(t), dy/dt = g'(t)</b><br>
-		<b>ds/dt = &radic;<span>f'(t)&sup2; + g'(t)&sup2;</span>*</b><br>
-		and then integrate <b>&int; ds dt</b> to find the length.
+		INLINE(\int_C f(t)\ dt) will give the length of the path C.<br>
+		For a line integral, you will need:
+		<p>
+			MATH(x = f(t), y = f(t), \frac{dx}{dt}=f'(t), \frac{dy}{dt}=g'(t))
+			MATH(\frac{ds}{dt} = \sqrt{f'(t)^2 + g'(t)^2})
+		</p>
+		and then integrate INLINE(\int_C ds\ dt) to find the length.
 		</p> <p>
-		Evaluate <b>&int; f(x) ds dt</b> to find the influence of the function along the length.
+		The line integral for the length of a curve defined as f(t) and y(t) is
+		<p>MATH(L=\int_a^b\sqrt{dx^2+dy^2}\ dt)</p>
 		</p>

@@ -1,3 +1,6 @@
 Book.html
+Book.html.in
 *.mobi
-
+*.azw3
+*.gif
+.DS_Store

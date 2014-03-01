@@ -1,3 +1,4 @@
+#include "LaTeX.m4"
 <DOCTYPE HTML>
 <html>
 	<body>
