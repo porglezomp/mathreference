@@ -10,17 +10,18 @@ import os
 import subprocess
 
 if not os.path.isdir("images/"):
-    print "Created 'images/' directory"
+    sys.stderr.write("Created 'images/' directory\n")
     os.mkdir("images/")
+
 NO_IMAGEMAGICK = False
 fr = ["\\", " ", "^", "{", "}", "(", ")", "[", "]", "&"]
 to = ["",   "",  "",  "",  "",  "",  "",  "",  "",  ""]
 regex = re.compile('<img ?(style=".*?")? '
-                   '"src="http://(?P<url>.*?)\?(?P<file>.*?)">')
+                   'src="http://(?P<url>.*?)\?(?P<file>.*?)">')
 a = sys.stdin.readline()
 while a:
     for item in regex.finditer(a):
-        shaname = hashlib.sha224(item.group('file')).digest(),
+        shaname = hashlib.sha224(item.group('file')).digest()
         b64name = base64.b64encode(shaname, "ab")
         fname = "images/" + b64name[:15] + ".gif"
         if not os.path.isfile(fname):
@@ -35,7 +36,7 @@ while a:
                                   fname])
         except:
             NO_IMAGEMAGICK = True
-            msg = "ERROR: It appears taht ImageMagick is not installed,"\
+            msg = "ERROR: It appears that ImageMagick is not installed,"\
                   "contrast may suffer in equations."
             sys.stderr.writelines(msg)
         item_url = item.group('url')
